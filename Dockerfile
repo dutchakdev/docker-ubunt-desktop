@@ -16,7 +16,7 @@ ENV container docker
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y ubuntu-desktop xrdp
 
 RUN cd /opt/ add-apt-repository ppa:obsproject/obs-studio -y && \
-    apt install vlc software-properties-common obs-studio firefox -y && \
+    apt install vlc software-properties-common obs-studio firefox curl -y && \
     curl -fsSL https://tailscale.com/install.sh | sh
 
 RUN useradd -m ubuntu -p $(openssl passwd -1 ubuntu) || true && \
